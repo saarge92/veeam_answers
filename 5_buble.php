@@ -7,13 +7,15 @@ require '5.php';
 $elementsArray = [
     new Element(56, "Radom element"),
     new Element(32, "Random element 2"),
-    new Element(57, "Random element 3")
+    new Element(57, "Random element 3"),
+    new Element(156, "Radom element 145"),
 ];
 
 // Реализация сортировкой
 function bubbleSort(array &$elements, string $fieldName, string $order = 'DESC'): void
 {
-    do {
+    $swapped = false;
+    while (!$swapped) {
         $swapped = false;
         for ($i = 1; $i < count($elements); $i++) {
             $rightElement = $elements[$i];
@@ -23,7 +25,7 @@ function bubbleSort(array &$elements, string $fieldName, string $order = 'DESC')
                 $swapped = true;
             }
         }
-    } while ($swapped != false);
+    }
 }
 
 function swap(array &$elements, int $indexLeft, int $indexRight)
