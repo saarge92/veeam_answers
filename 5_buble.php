@@ -14,18 +14,24 @@ $elementsArray = [
 // Реализация сортировкой
 function bubbleSort(array &$elements, string $fieldName, string $order = 'DESC'): void
 {
-    $swapped = false;
-    while (!$swapped) {
+    do {
         $swapped = false;
         for ($i = 1; $i < count($elements); $i++) {
             $rightElement = $elements[$i];
             $leftElement = $elements[$i - 1];
-            if ($leftElement->$fieldName > $rightElement->$fieldName) {
-                swap($elements, $i - 1, $i);
-                $swapped = true;
+            if ($order == 'ASC') {
+                if ($leftElement->$fieldName > $rightElement->$fieldName) {
+                    swap($elements, $i - 1, $i);
+                    $swapped = true;
+                }
+            } else {
+                if ($leftElement->$fieldName < $rightElement->$fieldName) {
+                    swap($elements, $i, $i - 1);
+                    $swapped = true;
+                }
             }
         }
-    }
+    } while ($swapped != false);
 }
 
 function swap(array &$elements, int $indexLeft, int $indexRight)
@@ -35,5 +41,5 @@ function swap(array &$elements, int $indexLeft, int $indexRight)
     $elements[$indexRight] = $temp;
 }
 
-bubbleSort($elementsArray, 'id');
+bubbleSort($elementsArray, 'id', 'ASC');
 print_r($elementsArray);
