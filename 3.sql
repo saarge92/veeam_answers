@@ -1,0 +1,1 @@
+select e.name from employes e group by e.name;
