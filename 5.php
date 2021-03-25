@@ -1,4 +1,5 @@
 <?php
+// Предложение 1 - Сортировка по Id с использованием готовых функци
 
 class Element
 {
@@ -18,7 +19,6 @@ $elementsArray = [
     new Element(33, 'Element 3'),
 ];
 
-// Предложение 1 - Сортировка по Id с использованием готовых функци
 function sortById(array &$elements, string $field, string $sortOrder = 'DESC')
 {
     return usort($elements, function (Element $firstElement, Element $secondElement) use ($sortOrder, $field) {
