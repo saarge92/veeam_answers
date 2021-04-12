@@ -12,11 +12,10 @@ function search(array $searchArray, int $sourceNumber, int $countToSearch): arra
     $resultArray = [];
     foreach ($searchArray as $element) {
         if ($element > $sourceNumber) {
-            if (count($resultArray) < 3) {
+            if (count($resultArray) < $countToSearch) {
                 $resultArray[] = $element;
             } else
                 break;
-
         }
     }
     return $resultArray;
