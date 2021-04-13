@@ -5,10 +5,11 @@ require '5.php';
 
 
 $elementsArray = [
-    new Element(56, "Radom element"),
-    new Element(32, "Random element 2"),
-    new Element(57, "Random element 3"),
-    new Element(156, "Radom element 145"),
+    new Element(434, 'Element434'),
+    new Element(33, 'Element 33'),
+    new Element(22, 'Element 22'),
+    new Element(434, 'Element 434'),
+    new Element(22, 'Element 22'),
 ];
 
 // Реализация сортировкой

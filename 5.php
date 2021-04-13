@@ -14,12 +14,14 @@ class Element
 }
 
 $elementsArray = [
-    new Element(434, 'Element1'),
-    new Element(4, 'Element 4'),
-    new Element(33, 'Element 3'),
+    new Element(434, 'Element434'),
+    new Element(33, 'Element 33'),
+    new Element(22, 'Element 22'),
+    new Element(434, 'Element 434'),
+    new Element(22, 'Element 22'),
 ];
 
-function sortById(array &$elements, string $field, string $sortOrder = 'DESC')
+function sortById(array &$elements, string $field, string $sortOrder = 'DESC'): bool
 {
     return usort($elements, function (Element $firstElement, Element $secondElement) use ($sortOrder, $field) {
         if ($sortOrder == 'DESC')
