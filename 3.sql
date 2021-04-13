@@ -1,3 +1,4 @@
 # Идея с подзапросами
-select e.name,e.salary from employes e 
-where e.salary > (SELECT AVG(e2.salary) FROM employes e2 where e2.title = e.title);
+select e.name,AVG(e.salary) OVER (PARTITION BY e.title) as avg_salary
+from employes e
+where e.salary > avg_salary
