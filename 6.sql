@@ -6,7 +6,7 @@
 отуда данные даты и далее сравнить с датами платежа заказов
 ;
 
-select SUM(o.payments) as sum, o.name from orders o
-where o.date_paymenent > (select s.some_date from single_dates s limit 1)
+select SUM(o.payments) as sum, o.name from orders o, (select s.some_date from single_dates s limit 1) as some_date
+where o.date_paymenent > some_date
 GROUP BY o.name
 ;
